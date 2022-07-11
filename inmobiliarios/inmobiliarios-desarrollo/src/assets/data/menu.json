@@ -1,0 +1,14 @@
+[
+    {
+        "nombre":"Inmobiliarios",
+        "redirect":"/dashboard/inmobiliarios"
+    },
+    {
+        "nombre":"Notificaciones",
+        "redirect":"/dashboard/inmobiliarios"
+    },
+    {
+        "nombre":"Titulares",
+        "redirect":"/dashboard/inmobiliarios"
+    }
+]

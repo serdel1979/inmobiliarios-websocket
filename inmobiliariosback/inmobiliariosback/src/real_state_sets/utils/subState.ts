@@ -1,0 +1,4 @@
+enum SubState {
+  IN_PROCESS = 'EN SEGUIMIENTO',
+  IN_ANALISYS = 'EN ANALISIS',
+}

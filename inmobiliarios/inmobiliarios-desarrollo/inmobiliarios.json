@@ -1,0 +1,45 @@
+{
+  "inmobiliarios": [
+    {
+      "nombre": "Los Naranjos",
+      "tipo": "Club de chacra",
+      "titulares": "5",
+      "estado": "No Confirmado",
+      "idCou": "a33",
+      "idMae": "22",
+      "id": "4"
+    },
+    {
+      "id": "9",
+      "nombre": "Campo Roca",
+      "tipo": "Barrio cerrado",
+      "titulares": "3",
+      "estado": "No Confirmado",
+      "idCou": "a38",
+      "idMae": "99"
+    },
+    {
+      "id": "10",
+      "nombre": "Guaymallén",
+      "tipo": "Urbano",
+      "titulares": "7",
+      "estado": "Confirmado",
+      "idCou": "a39",
+      "idMae": "66"
+    },
+    {
+      "nombre": "Abril",
+      "tipo": "Barrio cerrado",
+      "titulares": "10",
+      "estado": "Análisis",
+      "idCou": "3222",
+      "idMae": "1654",
+      "subestado": "",
+      "expediente": "",
+      "acta": "",
+      "num_admin": "",
+      "fecha": "",
+      "id": "6pkFpdR"
+    }
+  ]
+}

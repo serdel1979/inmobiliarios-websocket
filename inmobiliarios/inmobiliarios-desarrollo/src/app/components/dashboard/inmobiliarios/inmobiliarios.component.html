@@ -1,0 +1,81 @@
+<div class="container">
+    <mat-toolbar class="barra">
+        <span>Inmobiliarios</span>
+        <div class="example-spacer"> </div>
+        <button mat-raised-button color="primary" routerLink="/dashboard/crear_inmobiliario">Agregar</button>
+    </mat-toolbar>
+
+
+    <mat-form-field appearance="standard">
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filtro" #input autocomplete="off" appearance="fill">
+    </mat-form-field>
+
+    <div class="mat-elevation-z10">
+
+
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!--- Note that these columns can be defined in any order.
+      The actual rendered columns are set as a property on the row definition" -->
+            <!-- Position Column -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            
+
+            <ng-container matColumnDef="distrito">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Distrito </th>
+                <td mat-cell *matCellDef="let element"><u>{{element.district.name }} </u> </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="tipo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+                <td mat-cell *matCellDef="let element"> {{element.type_real_state.description}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef> Estado </th>
+                <td mat-cell *matCellDef="let element"> {{element.current_state}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="idCou">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Idmae </th>
+                <td mat-cell *matCellDef="let element"> {{element.id_mae}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="idMae">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Idcou </th>
+                <td mat-cell *matCellDef="let element"> {{element.id_cou}} </td>
+            </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="Acciones">
+                <th mat-header-cell *matHeaderCellDef style="text-align: right;">Acciones</th>
+                <td mat-cell *matCellDef="let element; let i = index" style="text-align: right;">
+                    <a class="pointer" style="color:#0c0c0c" matTooltip="Ver información">
+                        <mat-icon>search</mat-icon>
+                    </a>
+                    <a (click)="editarInmobiliario(element.id)" class="pointer" style="color:#0c0c0c"
+                        matTooltip="Editar información">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a (click)="mostrarDialogo(element.id)" class="pointer" style="color: #0c0c0c"
+                        matTooltip="Eliminar">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+
+</div>
